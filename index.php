@@ -4,6 +4,8 @@
         //print_r($_POST['nome']);
         //print_r($_POST['email']);
         //print_r($_POST['telefone']);
+        
+    include_once('config.php');
 
         $nome = $_POST['nome'];
         $data_nascimento = $_POST['data_nascimento'];
@@ -42,7 +44,6 @@
 
             <div class="row">
                 <div class="col-lg-6" id="form-container">
-
                     <form id="step_1" class="form-step">
                         <div class="panel panel-info">
                             <div class="panel-heading">
@@ -79,6 +80,7 @@
                                     <div>
                                         <button type="submit" class="btn btn-lg btn-info next-step">Próximo Passo</button>
                                     </div>
+                                    
                                 </fieldset>
                             </div>
                         </div>
@@ -110,57 +112,29 @@
                                             <label>Unidade</label>
                                             <select class="form-control" name="unidade">
                                                 <option value="">Selecione a unidade mais próxima</option>
-
-                                                if ($Regiao[Sul]){
-                                                    <option>Porto Alegre</option>
-                                                    <option>Curitiba</option>}
-                                                else if ($Regiao[Sudeste]){
-                                                    <option>São Paulo</option>
-                                                    <option>Rio de Janeiro</option>
-                                                    <option>Belo Horizonte</option>}
-                                                else if ($Regiao[Centro-Oeste]){
-                                                    <option>Brasília</option>}
-                                                else if ($Regiao[Nordeste]){
-                                                    <option>Salvador</option>
-                                                    <option>Recife</option>
-                                                else ($Regiao[Nordeste]){
-                                                    <option>Não possui disponibilidade</option>}
-
-
-
-                                                $arrayRegiao[Sul]
+                                                
                                                 <option>Porto Alegre</option>
                                                 <option>Curitiba</option>
-                                                    $arrayRegiao[Sudeste];
+                                                    $arrayregiao[Sudeste]
                                                 <option>São Paulo</option>
                                                 <option>Rio de Janeiro</option>
                                                 <option>Belo Horizonte</option>
-                                                    $arrayRegiao[Centro-Oeste];
+                                                    $arrayregiao[Centro-Oeste]
                                                 <option>Brasília</option>
-                                                    $arrayRegiao[Nordeste];
+                                                    $arrayregiao[Nordeste]
                                                 <option>Salvador</option>
                                                 <option>Recife</option>
-                                                    $arrayRegiao[Norte];
+                                                    $arrayregiao[Norte]
                                                 <option>Não possui disponibilidade</option>
 
-                                                $arrayRegiao = [sul =>10-4];
-                                                $arrayRegiao = [Sudeste =>10-1];
-                                                $arrayRegiao = [Centro-Oeste =>10-3];
-                                                $arrayRegiao = [Nordeste =>10-2];
-                                                $arrayRegiao = [Norte =>10-5];
-
-                                                
-                                                $data = new DateTime($data_nascimento );
-                                                $resultado = $data->diff( new DateTime( date('Y-m-d') ) );
-                                                echo $resultado->format( '%Y anos' );
-                                                
-
+                                            
                                             </select>
                                         </div>
                                     </div>
 
                                     <div>
                                         <button type="submit" class="btn btn-lg btn-info next-step">Enviar</button>
+                                        <imput type= "text" name="submit" id="submit">
                                     </div>
                                 </fieldset>
                             </div>
