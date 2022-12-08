@@ -1,10 +1,15 @@
 <?php
     if(isset($_POST['submit']))
     {
-        //print_r($_POST['nome']);
-        //print_r($_POST['email']);
-        //print_r($_POST['telefone']);
         
+/*
+        print_r($_POST['nome']);
+        print_r($_POST['data_nascimento']);
+        print_r($_POST['email']);
+        print_r($_POST['telefone']);
+        print_r($_POST['regiao']);
+        print_r($_POST['unidade']);
+*/
     include_once('config.php');
 
         $nome = $_POST['nome'];
@@ -44,7 +49,7 @@
 
             <div class="row">
                 <div class="col-lg-6" id="form-container">
-                    <form id="step_1" class="form-step">
+                    <form id="step_1" class="form-step" action="index.php" method="POST">
                         <div class="panel panel-info">
                             <div class="panel-heading">
                                 <div class="panel-title">
@@ -86,7 +91,7 @@
                         </div>
                     </form>
 
-                    <form id="step_2" class="form-step" style="display:none">
+                    <form id="step_2" class="form-step" style="display:none" action="index.php" method="POST">
                         <div class="panel panel-info">
                             <div class="panel-heading">
                                 <div class="panel-title">
@@ -161,6 +166,15 @@
             </div>
         </div>
         <script>
+            $(function () {
+                $('.next-step').click(function (event) {
+                    event.preventDefault();
+                    $(this).parents('.form-step').hide().next().show();
+                });
+            });
+        </script>
+    </body>
+</html>
             $(function () {
                 $('.next-step').click(function (event) {
                     event.preventDefault();
