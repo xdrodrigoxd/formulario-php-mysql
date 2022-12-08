@@ -34,8 +34,8 @@ elseif($idade => 18 && $idade <= 39){
     $pontoidade = 0;
 
 
-$pontuaçao = ($pontoEstado - $pontoidade)
-
+$pontuacao = ($pontoEstado - $pontoidade)
+    }
 {
 include_once('config.php');
 
